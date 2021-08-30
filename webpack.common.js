@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
    entry: "./src/main.js",
    output: {
-       path: path.resolve(__dirname, "dist"),
+       path: path.resolve(__dirname, "docs"),
        filename: "[name].js",
        chunkFilename: '[id].[chunkhash].js'
    },
