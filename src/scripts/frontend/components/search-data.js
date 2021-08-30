@@ -24,7 +24,7 @@ class searchData extends HTMLElement {
               <h1 class="masthead-heading mb-0">Find Food</h1>
               <div class="masthead-subheading mb-0 col-lg-6" style="margin: 0 auto;">
                 <select class="form-control form-select form-control-custom shadow-sm" name="keyword-category" id="list-categories">
-                  <option value="" selected>Pilih Kategori</option>
+                  <option value="" selected>Choose Category</option>
                 </select>
               </div>
               <a class="btn btn-primary btn-xl rounded-pill mt-5 shadow-sm" id="btnSearchElement" style="color: white;">Search</a>
