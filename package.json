@@ -1,0 +1,41 @@
+{
+  "name": "proyek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-eslint": "eslint --init",
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "eslint ./"
+  },
+  "author": "Tito Candra",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.9.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
