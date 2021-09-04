@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require("path");
  
 module.exports = {
@@ -11,33 +13,18 @@ module.exports = {
    module: {
        rules: [
            {
-               test: /\.css$/,
-               use: [
-                   {
-                       loader: "style-loader"
-                   },
-                   {
-                       loader: "css-loader"
-                   }
-               ]
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
            }
        ]
-   },
-   optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'common-chunks',
-                    chunks: 'all'
-                }
-            }
-        }
    },
    plugins: [
        new HtmlWebpackPlugin({
            template: "./src/index.html",
-           filename: "index.html"
-       })
+           filename: "index.html",
+           favicon: "./src/favicon.ico"
+       }),
+       new MiniCssExtractPlugin(),
+       new CleanWebpackPlugin(),
    ]
 }

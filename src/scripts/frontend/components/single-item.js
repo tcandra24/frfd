@@ -10,12 +10,12 @@ class singleItems extends HTMLElement {
     return this._item
   }
 
-  set backendObject (value) {
-    this._backendObject = value
+  get value () {
+    return this.getAttribute('value')
   }
 
-  get backendObject () {
-    return this._backendObject
+  set value (newValue) {
+    this.setAttribute('value', newValue)
   }
 
   static get observedAttributes () {
@@ -65,7 +65,6 @@ class singleItems extends HTMLElement {
     this.querySelector(`#collapse-${this._item.idMeal}`).addEventListener('show.bs.collapse', () => {
       Data.getData(`lookup.php?i=${this._item.idMeal}`)
         .then(({ data }) => {
-          // console.log(data.meals[0])
           const result = data.meals[0]
           this.value = `
           <h3> ${result.strMeal} </h3>
@@ -102,19 +101,10 @@ class singleItems extends HTMLElement {
             </ul>
           </div>
           `
-          // this.value = data.meals[0].strInstructions
-        }).catch(error => {
-          console.log(error)
+        }).catch(() => {
+          this.value = '<p class="m-1" style="text-align: center;">Error Get Data</p>'
         })
     })
-  }
-
-  get value () {
-    return this.getAttribute('value')
-  }
-
-  set value (newValue) {
-    this.setAttribute('value', newValue)
   }
 }
 

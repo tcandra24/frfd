@@ -6,7 +6,6 @@ class listItems extends HTMLElement {
 
   set category (value) {
     this._category = value
-    // this.render()
   }
 
   get items () {
@@ -18,7 +17,6 @@ class listItems extends HTMLElement {
   }
 
   render () {
-    // this.innerHTML = `<p> ${this._items.length} </p>`
     this.innerHTML = `<section>
     <div class="container px-2">
       <div class="row gx-5 align-items-center">
@@ -33,7 +31,6 @@ class listItems extends HTMLElement {
     this._items.forEach(itemMeal => {
       const singleItemElement = document.createElement('single-item')
       singleItemElement.item = itemMeal
-      // singleItemElement.event = detailFunc(itemMeal.id);
       this.appendChild(singleItemElement)
     })
   }
